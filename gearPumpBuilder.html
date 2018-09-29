@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   <meta charset="utf-8">
+   <title>Metaris Gear Pump Builder</title>
+  </head> 
+
+  <body>
+   <header>
+    <!--Hydraulex logo-->
+     <h1>Gear Pump Builder</h1>
+   </header>
+
+   <form>
+     <!--Customer selects bearing or bushing pump-->
+
+     <!--      
+     <p>Gear Pump Type
+      <select name="Type"  id="type">
+        <option>Bearing Pump</option>
+        <option>Bushing Pump</option>
+
+      </select>-->
+    </form>
+<form>
+     <!--Customer selects bearing pump series-->
+    <!--    
+     <p>Bearing Pump Series
+      <select name="Series" id="series">
+        <option>MH15 Series Bearing Pump</option>
+        <option>MH20 Series Bearing Pump</option>
+        <option>MH25 Series Bearing Pump</option>
+        <option>MH30 Series Bearing Pump</option>
+        <option>MH31 Series Bearing Pump</option>
+        <option>MH37 Series Bearing Pump</option>
+        <option>MH50 Series Bearing Pump</option>
+        <option>MH51 Series Bearing Pump</option>
+        <option>MH75 Series Bearing Pump</option>
+        <option>MH76 Series Bearing Pump</option>
+      </select>
+</p>-->
+</form>
+<form>
+<!--Customer selects 'Bushing Pump'-->
+<!--<p>Bushing Pump Series
+  <select>
+     <option>MH315 Series Bushing Pump</option>
+     <option>MH330 Series Bushing Pump</option>
+     <option>MH350 Series Bushing Pump</option>
+    <option>MH365 Series Bushing Pump</option>
+
+  </select>-->
+</form>
+<form>
+      <!--If customer selects 'MH15 Series Bearing Pump'-->
+      
+      <h2>MH15 Series Bearing Pump/Motor</h2>
+      <h2 id="assembly"></h2>
+      <!--Customer chooses pump or motor-->
+      <p>Type
+        <select name="Type2" id="type2" >
+          <option value="MHP15">MHP = Pump</option>
+          <option value="MHM15">MHM = Motor</option>
+        </select>
+      </p>
+      <!--Customer chooses how many stages the pump has-->
+      <p>
+        <select name="unit" id="unit">
+          <option value="A">A = Single Unit</option>
+          <option value="B">B = Tandem Unit</option>
+          <option value="C">C = Single or Tandem Unit w/a Continental Shaft</option>
+        </select>
+      </p>
+      <!--Customer choses shaft mounting from chart and types it in block-->
+      <p>Shaft End Cover
+        <select name="shaftbearing" id="shaftBearing">
+          <option value="1">1 = Pump w/Shaft Bearing(Clockwise Rotation)</option>
+          <option value="2">2 = Pump w/Shaft Bearing(Counter-clockwise Rotation)</option>
+          <option value="3">3 = Pump w/Shaft Bearing(Double Rotation)</option>
+            <option value="9">9 = Motor w/Shaft Bearing & 1/4" Drain Port</option>
+        </select>
+      <!--Customer choses shaft bearing style and rotation-->
+
+      <p>Shaft End Cover
+        <select name="shaftmount" id="shaftMount">
+        <option value="00">00 = Pad Mount</option>
+        <option value="01">01 = SAE 2-Bolt "A" Mount</option>
+        <option value="02">02 = Round Flange 6-Bolt</option>
+        <option value="05">05 = 4-Bolt 3-3/4" "A" Mount</option>
+        <option value="07">07 = SAE 2-Bolt "B" Mount</option>
+        <option value="10">10 = 4-Bolt Round</option>
+      </select>
+    </p>
+      <h3>Port End Cover</h3>
+      <p>Enter NPT or ORB code from Port End Cover Charts<input id="portEndCover" type="text" placeholder="Enter Capital Letters" ></p>
+      <!--Customer choses gearhousing configuration from chart and types it in block-->
+      <h3>Gear Housing</h3>
+      <p>Enter NPT or ORB code from Gear Housing Charts<input id="gearHousing" type="text" placeholder="Enter Capital Letters" ></p>
+      <!--Customer choses gear size from drop down menu-->
+      <p>Gear Size
+        <select name="gearsize" id="gearSize">
+          <option value="05">Code/Displacement(in3/r) = 05 (.69)</option>
+          <option value="07">Code/Displacement(in3/r) = 07 (1.07)</option>
+          <option value="10">Code/Displacement(in3/r) = 10 (1.38)</option>
+          <option value="12">Code/Displacement(in3/r) = 12 (1.73)</option>
+          <option value="15">Code/Displacement(in3/r) = 15(2.08)</option>
+          <option value="17">Code/Displacement(in3/r) = 17 (2.42)</option>
+          <option value="20">Code/Displacement(in3/r) = 20 (2.7)</option>
+        </select>
+      </p>
+        <!--Customer choses shaft type from dropdown-->
+        <p>Shaft Type
+          <select name="shafttype" id="shaftType">
+            <option value="3">3 = 6 Tooth Spline .997 Maj. Dia. X 2-1/2" Ext</option>
+            <option value="12">12 = SAE "C" 14 Tooth Spline 1.250" Dia</option>
+            <option value="11">11 = 1" Dia. Keyed Shaft</option>
+            <option value="25">25 = 1.250" Dia. Keyed Shaft (Special Order)</option>
+          </select>
+        </p>
+        <!--Customer needs to reference charts and input 2-digit code for bearing carrier style-->
+        <h3>Bearing Carrier</h3>
+        <p>Enter NPT or SAE code from Bearing Carriers charts<input id="bearingCarrier" type="text" placeholder="Enter Capital Letters"></p>
+
+<div>
+<input type="submit" name="Submit" onclick="submitInfo()">
+
+</div>
+</form>
+<hr>
+
+<script>
+  
+
+  function submitInfo() {
+  /*let type = document.getElementById("type").value;
+  let series = document.getElementById("series").value;*/
+  let type2 = document.getElementById("type2").value;
+  let unit = document.getElementById("unit").value;
+  let shaftBearing= document.getElementById("shaftBearing").value;
+  let shaftMount= document.getElementById("shaftMount").value;
+  let portEndCover= document.getElementById("portEndCover").value;
+  let gearHousing= document.getElementById("gearHousing").value;
+  let gearSize= document.getElementById("gearSize").value;
+  let shaftType= document.getElementById("shaftType").value;
+  let bearingCarrier= document.getElementById("bearingCarrier").value;
+
+let modelCode = document.getElementById("assembly");
+modelCode.innerHTML=("Order: " + type2 + "-" + unit + "-" + shaftBearing + "-" + shaftMount + "-" + portEndCover + "-" + gearHousing + "-" + gearSize + "-" + shaftType + "-" + bearingCarrier);
+}
+submitInfo();
+
+</script>
+
+   </main>
+   
+   <footer>
+   </footer>
+
+</body>
+</html>
